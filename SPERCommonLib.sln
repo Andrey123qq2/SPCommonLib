@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.28307.106
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SPERCommonLib", "SPERCommonLib.csproj", "{EB81E3CE-2878-4672-8C47-8DF3CC6CFFA5}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SPERCommonLibTests1", "..\SPERCommonLibTests1\SPERCommonLibTests1.csproj", "{DFD21DBF-3351-44D7-B84B-965882E23511}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{EB81E3CE-2878-4672-8C47-8DF3CC6CFFA5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EB81E3CE-2878-4672-8C47-8DF3CC6CFFA5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EB81E3CE-2878-4672-8C47-8DF3CC6CFFA5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EB81E3CE-2878-4672-8C47-8DF3CC6CFFA5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DFD21DBF-3351-44D7-B84B-965882E23511}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DFD21DBF-3351-44D7-B84B-965882E23511}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DFD21DBF-3351-44D7-B84B-965882E23511}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DFD21DBF-3351-44D7-B84B-965882E23511}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {1C0A7C2D-2183-4B53-A1A5-806502CF80E0}
+	EndGlobalSection
+EndGlobal
