@@ -15,7 +15,7 @@ namespace SPERCommonLib
         public T ERConf { get; }
 
 
-        public ERItem(SPItemEventProperties properties, string ListRootFolderConfPropertyName)
+        public ERItem(SPItemEventProperties properties, string ListRootFolderConfPropertyName = "")
         {
             using (SPSite site = new SPSite(properties.WebUrl))
             {
@@ -45,7 +45,10 @@ namespace SPERCommonLib
 
             eventType = properties.EventType.ToString();
 
-            ERConf = ERListConf<T>.Get(listItem.ParentList, ListRootFolderConfPropertyName);
+            if (ListRootFolderConfPropertyName != string.Empty)
+            {
+                ERConf = ERListConf<T>.Get(listItem.ParentList, ListRootFolderConfPropertyName);
+            }
         }
 
     }

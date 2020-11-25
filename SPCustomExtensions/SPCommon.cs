@@ -6,6 +6,8 @@ using System.Threading.Tasks;
 using System.Text.RegularExpressions;
 using Microsoft.SharePoint;
 using Microsoft.SharePoint.Utilities;
+using System.Configuration;
+using System.Web.Configuration;
 
 namespace SPERCommonLib
 {
@@ -97,6 +99,13 @@ namespace SPERCommonLib
             {
                 return false;
             }
+        }
+        public static AppSettingsSection GetWebAppSettings(SPWeb web)
+        {
+            Configuration config = WebConfigurationManager.OpenWebConfiguration("/", web.Site.WebApplication.Name);
+            AppSettingsSection appSettings = config.AppSettings;
+
+            return appSettings;
         }
     }
 }

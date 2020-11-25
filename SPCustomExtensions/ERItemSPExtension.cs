@@ -267,7 +267,6 @@ namespace SPERCommonLib
 
             foreach (dynamic relItem in jsonRelatedItems)
             {
-                List<string> arrRelatedListUserFields = new List<string>();
                 int relatedItemId = (int)relItem["ItemId"];
                 String relatedlistIdString = relItem["ListId"];
                 Guid relatedlistId = new Guid(relatedlistIdString);
@@ -275,44 +274,14 @@ namespace SPERCommonLib
                 SPList relatedList = item.Web.Lists[relatedlistId];
                 SPListItem relatedItem = relatedList.GetItemById(relatedItemId);
 
-                arrRelatedListUserFields = relatedList.GetListUserFields();
+                List<string> arrRelatedListUserFields = relatedList.GetListUserFields();
 
-                arrRealtedItemUsers.AddRange(relatedItem.GetItemUsers(arrRelatedListUserFields));
+                arrRealtedItemUsers.AddRange(relatedItem.GetUsersFromUsersFields(arrRelatedListUserFields));
             }
 
             return arrRealtedItemUsers;
 
         }
-
-        public static List<SPUser> GetItemUsers(this SPListItem item, List<string> arrListUserFields)
-        {
-            List<SPUser> itemUsers = new List<SPUser>();
-            foreach (String field in arrListUserFields)
-            {
-                dynamic fieldUsers = item[field];
-                if (fieldUsers == null)
-                {
-                    continue;
-                }
-                if (fieldUsers.GetType().Name == "String")
-                {
-                    int userId = int.Parse(fieldUsers.Substring(0, fieldUsers.IndexOf(";")));
-                    SPUser user = item.Web.SiteUsers.GetByID(userId);
-                    itemUsers.Add(user);
-                }
-                else
-                {
-                    foreach (SPFieldUserValue userValue in fieldUsers)
-                    {
-                        int userId = userValue.LookupId;
-                        SPUser user = item.Web.SiteUsers.GetByID(userId);
-                        itemUsers.Add(user);
-                    }
-                }
-            };
-            return itemUsers;
-        }
-
         public static string GetItemFullUrl(this SPListItem itemSP)
         {
             string itemFullUrl = itemSP.Web.Site.Url + itemSP.ParentList.DefaultDisplayFormUrl + "?ID=" + itemSP.ID;
