@@ -268,16 +268,24 @@ namespace SPERCommonLib
             foreach (dynamic relItem in jsonRelatedItems)
             {
                 int relatedItemId = (int)relItem["ItemId"];
-                String relatedlistIdString = relItem["ListId"];
+                string relatedlistIdString = relItem["ListId"];
                 Guid relatedlistId = new Guid(relatedlistIdString);
 
                 SPList relatedList = item.Web.Lists[relatedlistId];
-                SPListItem relatedItem = relatedList.GetItemById(relatedItemId);
+                SPListItem relatedItem;
+                try
+                {
+                    relatedItem = relatedList.GetItemById(relatedItemId);
+                }
+                catch (Exception)
+                { 
+                    continue; 
+                }
 
                 List<string> arrRelatedListUserFields = relatedList.GetListUserFields();
 
                 arrRealtedItemUsers.AddRange(relatedItem.GetUsersFromUsersFields(arrRelatedListUserFields));
-            }
+                }
 
             return arrRealtedItemUsers;
 
