@@ -27,5 +27,13 @@ namespace SPSCommon.SPCustomExtensions
 
             return arrListUserFields;
         }
+        public static SPList GetListByFullUrl(string listUrl)
+        {
+            SPSite site = new SPSite(listUrl);
+            SPWeb web = site.OpenWeb();
+            SPList list = web.GetList(listUrl);
+
+            return list;
+        }
     }
 }
