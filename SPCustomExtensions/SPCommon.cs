@@ -9,7 +9,7 @@ using Microsoft.SharePoint.Utilities;
 using System.Configuration;
 using System.Web.Configuration;
 
-namespace SPERCommonLib
+namespace SPSCommon.SPCustomExtensions
 {
     public static class SPCommon
     {

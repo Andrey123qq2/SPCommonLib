@@ -3,7 +3,7 @@ using System.Text;
 using System.Threading.Tasks;
 using Microsoft.SharePoint;
 
-namespace SPERCommonLib
+namespace SPSCommon.ERItem
 {
     public interface IERItem
     {

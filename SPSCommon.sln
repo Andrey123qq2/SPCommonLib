@@ -1,9 +1,9 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 15
-VisualStudioVersion = 15.0.28307.106
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.30523.141
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SPERCommonLib", "SPERCommonLib.csproj", "{EB81E3CE-2878-4672-8C47-8DF3CC6CFFA5}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SPSCommon", "SPSCommon.csproj", "{EB81E3CE-2878-4672-8C47-8DF3CC6CFFA5}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SPERCommonLibTests1", "..\SPERCommonLibTests1\SPERCommonLibTests1.csproj", "{DFD21DBF-3351-44D7-B84B-965882E23511}"
 EndProject

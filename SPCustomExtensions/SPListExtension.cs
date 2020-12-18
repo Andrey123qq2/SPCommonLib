@@ -6,7 +6,7 @@ using Microsoft.SharePoint;
 using Microsoft.SharePoint.Utilities;
 using System.Text.RegularExpressions;
 
-namespace SPERCommonLib
+namespace SPSCommon.SPCustomExtensions
 {
     public static class SPListExtension
     {

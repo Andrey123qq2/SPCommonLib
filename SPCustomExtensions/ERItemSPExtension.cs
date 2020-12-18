@@ -6,8 +6,9 @@ using Microsoft.SharePoint;
 using Microsoft.SharePoint.Utilities;
 using Newtonsoft.Json;
 using System.Text.RegularExpressions;
+using SPSCommon.ERItem;
 
-namespace SPERCommonLib
+namespace SPSCommon.SPCustomExtensions
 {
     public static class ERItemSPExtension
     {

@@ -9,7 +9,7 @@ using System.Web;
 using System.Text.RegularExpressions;
 
 
-namespace SPERCommonLib
+namespace SPSCommon.SPCustomExtensions
 {
     public static class SPListItemPermissionsExtension
     {

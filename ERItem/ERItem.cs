@@ -3,10 +3,11 @@ using System.Collections.Generic;
 using System.Text;
 using System.Threading.Tasks;
 using Microsoft.SharePoint;
+using SPSCommon.SPJsonConf;
 
-namespace SPERCommonLib
+namespace SPSCommon.ERItem
 {
-    public class ERItem<T> : IERItem, IERConf<T>
+    public class ERItem<T> : SPJsonConf<T>, IERItem
     {
         public SPListItem listItem { get; }
         public SPItemEventProperties eventProperties { get; }
@@ -47,7 +48,7 @@ namespace SPERCommonLib
 
             if (ListRootFolderConfPropertyName != string.Empty)
             {
-                ERConf = ERListConf<T>.Get(listItem.ParentList, ListRootFolderConfPropertyName);
+                ERConf = SPJsonConf<T>.Get(listItem.ParentList, ListRootFolderConfPropertyName);
             }
         }
 

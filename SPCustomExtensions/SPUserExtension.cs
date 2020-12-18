@@ -9,7 +9,7 @@ using System.Web;
 using Microsoft.Office.Server;
 using Microsoft.Office.Server.UserProfiles;
 
-namespace SPERCommonLib
+namespace SPSCommon.SPCustomExtensions
 {
     public static class SPUserExtension
     {
@@ -37,6 +37,31 @@ namespace SPERCommonLib
             }
 
             return userManagers;
+        }
+
+        public static SPPrincipal GetUserAssistant(this SPUser user)
+        {
+            SPPrincipal usersAssistant = null;
+
+            SPServiceContext spServiceContext = SPServiceContext.GetContext(user.ParentWeb.Site);
+            UserProfileManager userProfileManager = new UserProfileManager(spServiceContext);
+
+            if (!userProfileManager.UserExists(user.LoginName))
+            {
+                return usersAssistant;
+            }
+
+            UserProfile userProfile = userProfileManager.GetUserProfile(user.LoginName);
+            string assistantLogin = userProfile["Assistant"].Value as string;
+
+            if (String.IsNullOrEmpty(assistantLogin))
+            {
+                return usersAssistant;
+            }
+
+            usersAssistant = user.ParentWeb.EnsureUser(assistantLogin);
+
+            return usersAssistant;
         }
     }
 }

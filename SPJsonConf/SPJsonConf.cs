@@ -3,9 +3,9 @@ using Microsoft.SharePoint;
 using Newtonsoft.Json;
 using System.Collections;
 
-namespace SPERCommonLib
+namespace SPSCommon.SPJsonConf
 {
-    public static class ERListConf<T>
+    public class SPJsonConf<T>
     {
         public static T Get(SPList List, string RootFolderPropertyName)
         {

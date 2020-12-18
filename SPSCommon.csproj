@@ -7,8 +7,8 @@
     <ProjectGuid>{EB81E3CE-2878-4672-8C47-8DF3CC6CFFA5}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>SPERCommonLib</RootNamespace>
-    <AssemblyName>SPERCommonLib</AssemblyName>
+    <RootNamespace>SPSCommon</RootNamespace>
+    <AssemblyName>LibCustom.SPS.Common</AssemblyName>
     <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <Deterministic>false</Deterministic>
@@ -61,8 +61,8 @@
     <Compile Include="ERItem\ERItem.cs" />
     <Compile Include="ERItem\ERItemListItemNullException.cs" />
     <Compile Include="ERItem\IERItem.cs" />
-    <Compile Include="ERListConf\ERListConf.cs" />
-    <Compile Include="ERListConf\IERConf.cs" />
+    <Compile Include="SPJsonConf\SPJsonConf.cs" />
+    <Compile Include="SPJsonConf\ISPJsonConf.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="SPCustomExtensions\SPListItemPermissionsExtension.cs" />
     <Compile Include="SPCustomExtensions\ERItemSPExtension.cs" />

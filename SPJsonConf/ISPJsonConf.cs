@@ -2,9 +2,9 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace SPERCommonLib
+namespace SPSCommon.SPJsonConf
 {
-    public interface IERConf<T>
+    public interface ISPJsonConf<T>
     {
         T ERConf { get; }
     }
